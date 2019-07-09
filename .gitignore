@@ -1,6 +1,6 @@
 # Config files
 .idea
-.*iml
+*.iml
 
 # Compile / Output files
 target/

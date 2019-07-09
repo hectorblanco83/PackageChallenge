@@ -15,6 +15,14 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
 
+		<!-- Sonarcloud configuration-->
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<sonar.projectKey>hectorblanco83_PackageChallenge</sonar.projectKey>
+		<sonar.organization>hectorblanco83-github</sonar.organization>
+		<sonar.login>5ffe3669a3f4906a4cd00ad36a56eacd0ae4533d </sonar.login>
+		<sonar.junit.reportPaths>target/surefire-reports</sonar.junit.reportPaths>
+		<sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+
 		<!-- Dependencies' versions -->
 		<junit-jupiter.version>5.3.2</junit-jupiter.version>
 		<mockito.version>2.27.0</mockito.version>
@@ -39,5 +47,40 @@
 
 	</dependencies>
 
+	<build>
+		<plugins>
+
+			<!-- Sonarcloud -->
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.6.0.1398</version>
+			</plugin>
+
+			<!-- Jacoco coverage report -->
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.2</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>report</id>
+						<phase>test</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+
+
+		</plugins>
+	</build>
 
 </project>
