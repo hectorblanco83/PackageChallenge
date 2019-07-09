@@ -1,0 +1,6 @@
+# Config files
+.idea
+.*iml
+
+# Compile / Output files
+target/
