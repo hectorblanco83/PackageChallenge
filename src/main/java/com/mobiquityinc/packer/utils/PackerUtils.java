@@ -8,6 +8,13 @@ package com.mobiquityinc.packer.utils;
 public class PackerUtils {
 	
 	/**
+	 * Private constructor to prevent new instances of this utility class
+	 */
+	private PackerUtils() {
+	}
+	
+	
+	/**
 	 * Return <code>true</code> if, and only if, the string in input is null, empty or all of it's characters
 	 * are whitespaces. Return <code>false</code> otherwise.
 	 *
