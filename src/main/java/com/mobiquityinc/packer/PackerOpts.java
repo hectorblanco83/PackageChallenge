@@ -43,6 +43,7 @@ public class PackerOpts {
 	 *
 	 * @return a Packer with the default options.
 	 */
+	@SuppressWarnings("squid:CommentedOutCodeLine")
 	public static PackerOpts defaultOptions() {
 		//
 		// Good case to demonstrate how to use this builder in a "Grails-like" way:
@@ -61,6 +62,7 @@ public class PackerOpts {
 	public static class Builder {
 		
 		// sonar will complaint about that, but for readability of the with() method, I'll let this public
+		@SuppressWarnings({"squid:ClassVariableVisibilityCheck"})
 		public String currencySymbol;
 		
 		
@@ -68,7 +70,7 @@ public class PackerOpts {
 		 * A consumer to avoid every getter and setter of this builder
 		 *
 		 * @param builderFunction the
-		 * @return
+		 * @return the builder itself
 		 */
 		public Builder with(Consumer<Builder> builderFunction) {
 			builderFunction.accept(this);
@@ -76,6 +78,10 @@ public class PackerOpts {
 		}
 		
 		
+		/**
+		 * Build the Packer's options with this builder's settings
+		 * @return the PackerOpts built
+		 */
 		public PackerOpts build() {
 			return new PackerOpts(this);
 		}
