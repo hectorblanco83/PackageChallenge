@@ -11,13 +11,6 @@ public class APIException extends Exception {
 	/**
 	 * {@inheritDoc}
 	 */
-	public APIException() {
-	}
-	
-	
-	/**
-	 * {@inheritDoc}
-	 */
 	public APIException(String message) {
 		super(message);
 	}
@@ -28,14 +21,6 @@ public class APIException extends Exception {
 	 */
 	public APIException(String message, Throwable cause) {
 		super(message, cause);
-	}
-	
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	public APIException(Throwable cause) {
-		super(cause);
 	}
 	
 }

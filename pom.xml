@@ -26,7 +26,7 @@
 		<!-- Dependencies' versions -->
 		<commons-io.version>2.6</commons-io.version>
 		<slf4j.version>1.7.26</slf4j.version>
-		<junit-jupiter.version>5.3.2</junit-jupiter.version>
+		<junit-jupiter.version>5.4.2</junit-jupiter.version>
 		<mockito.version>2.27.0</mockito.version>
 	</properties>
 
@@ -51,6 +51,12 @@
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
+			<version>${junit-jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-params</artifactId>
 			<version>${junit-jupiter.version}</version>
 			<scope>test</scope>
 		</dependency>
@@ -80,8 +86,9 @@
 				<version>2.22.0</version>
 				<configuration>
 					<systemPropertyVariables>
-						<org.slf4j.simpleLogger.defaultLogLevel>DEBUG</org.slf4j.simpleLogger.defaultLogLevel>
+						<org.slf4j.simpleLogger.defaultLogLevel>TRACE</org.slf4j.simpleLogger.defaultLogLevel>
 						<org.slf4j.simpleLogger.showDateTime>true</org.slf4j.simpleLogger.showDateTime>
+						<org.slf4j.simpleLogger.showShortLogName>true</org.slf4j.simpleLogger.showShortLogName>
 					</systemPropertyVariables>
 				</configuration>
 			</plugin>

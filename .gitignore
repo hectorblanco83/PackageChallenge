@@ -3,4 +3,6 @@
 *.iml
 
 # Compile / Output files
-target/
+/target/
+/others/
+/Packaging Challenge.pdf
