@@ -46,7 +46,7 @@ class PackerIT {
 	@Test
 	@DisplayName("GIVEN input with negative values THEN thrown APIException")
 	void inputWithNegativeWeight() {
-		// When reading a file wiht negative value of package weight
+		// When reading a file with negative value of package weight
 		APIException apiException = assertThrows(APIException.class, () -> Packer.pack(INPUT_NEGATIVE_VALUES));
 		
 		// Then packer should thrown an APIException
@@ -55,7 +55,7 @@ class PackerIT {
 	
 	
 	@Test
-	@DisplayName("GIVEN input with maximun number of things THEN expected correct calculation")
+	@DisplayName("GIVEN input with maximum number of things THEN expected correct calculation")
 	void inputMaxNumberOfThings() {
 		try {
 			String expected = "2,7";
@@ -68,7 +68,7 @@ class PackerIT {
 	
 	
 	@Test
-	@DisplayName("GIVEN input with more than maximun number of things THEN thrown APIException")
+	@DisplayName("GIVEN input with more than maximum number of things THEN thrown APIException")
 	void inputOverMaxNumberOfThings() {
 		// When reading a file with more than 15 things
 		APIException apiException = assertThrows(APIException.class, () -> Packer.pack(INPUT_OVER_MAX_THINGS));

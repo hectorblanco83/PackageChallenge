@@ -27,28 +27,13 @@ public class ThingsCombination {
 	}
 	
 	
-	public void setCombination(String combination) {
-		this.combination = combination;
-	}
-	
-	
 	public Double getWeight() {
 		return weight;
 	}
 	
 	
-	public void setWeight(Double weight) {
-		this.weight = weight;
-	}
-	
-	
 	public Double getCost() {
 		return cost;
-	}
-	
-	
-	public void setCost(Double cost) {
-		this.cost = cost;
 	}
 	
 	

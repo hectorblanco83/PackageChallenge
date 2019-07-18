@@ -121,7 +121,7 @@ class PackageBuilderTest {
 			assertEquals(Double.valueOf(60), newCombination.getWeight());
 			assertEquals(Double.valueOf(25), newCombination.getCost());
 		} catch(APIException e) {
-			fail("ApiException not esxpected here");
+			fail("ApiException not expected here");
 		}
 	}
 	

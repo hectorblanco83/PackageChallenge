@@ -53,7 +53,7 @@ class PackerTest {
 	@DisplayName("extractPackageWeightFromInput: GIVEN a valid package weight definition in string " +
 			"THEN converts correctly to Double value")
 	void extractPackageWeightFromInput() {
-		// Given a definition of a package's max weigth
+		// Given a definition of a package's max weight
 		String packageWeightDefinition = "10";
 		
 		
@@ -75,7 +75,7 @@ class PackerTest {
 	void extractPackageWeightWithIncorrectValue() {
 		Packer packer = new Packer(PackerOpts.defaultOptions());
 		
-		// Given a definition of a negative package's max weigth
+		// Given a definition of a negative package's max weight
 		String negativeWeightDefinition = "-1";
 		
 		// when
@@ -86,7 +86,7 @@ class PackerTest {
 		assertEquals("Package weight is negative: \"-1\"", exception.getMessage());
 		
 		
-		// Given a definition of a package's max weigth that's not a number
+		// Given a definition of a package's max weight that's not a number
 		String alphanumericWeightDefinition = "1B";
 		
 		// when

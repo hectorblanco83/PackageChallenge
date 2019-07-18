@@ -65,11 +65,11 @@ class PackageBuilder {
 	 * @throws APIException In case of any error during package assemble
 	 */
 	Optional<String> resolveBetterPackage(List<Thing> things, double packageWeight) throws APIException {
-		// keep a refference to the better package created until now
+		// keep a reference to the better package created until now
 		String betterPackage = null;
 		
 		/*
-		 * This is based on a solution to the problem of create a powerser of a list. We need all possibile
+		 * This is based on a solution to the problem of create a powerset of a list. We need all possible
 		 * combinations of thing's indexes to choose from. The total number of possible combinations is 2 to the power
 		 * of N, where N is the total number of things.
 		 *
@@ -94,7 +94,7 @@ class PackageBuilder {
 				ThingsCombination newCombination = createThingCombination(combinations.get(i), aThing);
 				LOGGER.debug("newCombination created: {}", newCombination);
 				
-				// If new combination's weight is less then the max package weight, it's a combination that sould be
+				// If new combination's weight is less then the max package weight, it's a combination that should be
 				// considered
 				if(newCombination.getWeight() <= packageWeight) {
 					combinations.add(newCombination.getCombination());
@@ -158,7 +158,7 @@ class PackageBuilder {
 	 * @return a string with the things' indexes which is the better choice to assemble an optimal package
 	 */
 	private String chooseBetterPackageCombination(String aPackage, ThingsCombination aCombination) {
-		LOGGER.debug("choosing beter combination between {} and {}", aPackage, aCombination);
+		LOGGER.debug("choosing better combination between {} and {}", aPackage, aCombination);
 		
 		// no package combination can have a negative cost, so we will use a default of -1 if
 		// aPackage is NULL or empty [costMap will not have the key]
@@ -172,7 +172,7 @@ class PackageBuilder {
 			return aCombination.getCombination();
 		}
 		
-		// otherwise, if the new combination and the acurrent better combination cost the same
+		// otherwise, if the new combination and the a current better combination cost the same
 		// but the new combination weighs less, we should get the new combination as a better choice
 		Double aPackageWeight = weightMap.get(aPackage);
 		if(aCombination.getCost().equals(aPackageCost) && aCombination.getWeight() < aPackageWeight) {

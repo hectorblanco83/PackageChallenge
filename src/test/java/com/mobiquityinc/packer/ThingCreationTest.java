@@ -38,7 +38,7 @@ class ThingCreationTest {
 	
 	
 	@Test
-	@DisplayName("GIVEN thign definition with anything else then numbers THEN expect IncorrectThingDefinition")
+	@DisplayName("GIVEN thing definition with anything else then numbers THEN expect IncorrectThingDefinition")
 	void checkWrongThingCreation() {
 		IncorrectThingDefinition nfException;
 		
@@ -82,7 +82,7 @@ class ThingCreationTest {
 	
 	@Test
 	@DisplayName("GIVEN incomplete thing's definition THEN throws IncorrectThingDefinition")
-	void checkThingCreationWithoutOneAtribute() {
+	void checkThingCreationWithoutOneAttribute() {
 		// given
 		String thingDefinition = "2,88.62";
 		Packer packer = new Packer(PackerOpts.defaultOptions());

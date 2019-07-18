@@ -184,42 +184,42 @@ public class Packer {
 	Thing extractThingFromInput(String definition) throws IncorrectThingDefinition {
 		LOGGER.debug("Thing definition to convert: {}", definition);
 		// we could use PackerOpts to define the Thing attributes' separator
-		String[] atributes = definition.split(",");
-		if(atributes.length != 3) {
+		String[] attributes = definition.split(",");
+		if(attributes.length != 3) {
 			String error = String.format("Incorrect format for thing in input: %s", definition);
 			throw new IncorrectThingDefinition(error);
 		}
 		
 		int index;
 		try {
-			index = Integer.parseInt(atributes[0]);
+			index = Integer.parseInt(attributes[0]);
 			if(index < 0) {
-				throw new IncorrectThingDefinition("Thing's index is negative: \"" + atributes[0].trim() + "\"");
+				throw new IncorrectThingDefinition("Thing's index is negative: \"" + attributes[0].trim() + "\"");
 			}
 		} catch(NumberFormatException nfe) {
-			throw new IncorrectThingDefinition("Incorrect format for thing's index: \"" + atributes[0].trim() + "\"", nfe);
+			throw new IncorrectThingDefinition("Incorrect format for thing's index: \"" + attributes[0].trim() + "\"", nfe);
 		}
 		
 		
 		double weight;
 		try {
-			weight = Double.valueOf(atributes[1]);
+			weight = Double.valueOf(attributes[1]);
 			if(weight < 0) {
-				throw new IncorrectThingDefinition("Thing's weight is negative: \"" + atributes[1].trim() + "\"");
+				throw new IncorrectThingDefinition("Thing's weight is negative: \"" + attributes[1].trim() + "\"");
 			}
 		} catch(NumberFormatException nfe) {
-			throw new IncorrectThingDefinition("Incorrect format for thing's weight: \"" + atributes[1].trim() + "\"", nfe);
+			throw new IncorrectThingDefinition("Incorrect format for thing's weight: \"" + attributes[1].trim() + "\"", nfe);
 		}
 		
 		double cost;
 		try {
-			String costWhithoutCurrency = atributes[2].replace(opts.getCurrencySymbol(), "");
-			cost = Double.valueOf(costWhithoutCurrency);
+			String costWithoutCurrency = attributes[2].replace(opts.getCurrencySymbol(), "");
+			cost = Double.valueOf(costWithoutCurrency);
 			if(cost < 0) {
-				throw new IncorrectThingDefinition("Thing's cost is negative: \"" + atributes[2].trim() + "\"");
+				throw new IncorrectThingDefinition("Thing's cost is negative: \"" + attributes[2].trim() + "\"");
 			}
 		} catch(NumberFormatException nfe) {
-			throw new IncorrectThingDefinition("Incorrect format for thing's cost: \"" + atributes[2].trim() + "\"", nfe);
+			throw new IncorrectThingDefinition("Incorrect format for thing's cost: \"" + attributes[2].trim() + "\"", nfe);
 		}
 		
 		return new Thing(index, weight, cost);
