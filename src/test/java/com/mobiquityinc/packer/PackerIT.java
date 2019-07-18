@@ -17,6 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 class PackerIT {
 	
 	private static final String INPUT_ASSIGNMENT_PATH = "./src/test/resources/assignment_input.txt";
+	private static final String INPUT_CUSTOM_PATH = "./src/test/resources/input_custom.txt";
 	private static final String INPUT_NEGATIVE_VALUES = "./src/test/resources/input_negative_values.txt";
 	private static final String INPUT_MAX_THINGS = "./src/test/resources/input_max_things.txt";
 	private static final String INPUT_OVER_MAX_THINGS = "./src/test/resources/input_over_max_things.txt";
@@ -36,6 +37,27 @@ class PackerIT {
 					"8,9";
 			
 			String packages = Packer.pack(INPUT_ASSIGNMENT_PATH);
+			Assertions.assertEquals(expected, packages);
+		} catch(APIException e) {
+			Assertions.fail("Unexpected exception: " + e.getLocalizedMessage());
+		}
+	}
+	
+	
+	@Test
+	@DisplayName("GIVEN personal custom input THEN returns expected output")
+	void testCustomInput() {
+		try {
+			String expected = "-"
+					+ System.lineSeparator() + "4,5"
+					+ System.lineSeparator() + "1,3"
+					+ System.lineSeparator() + "1"
+					+ System.lineSeparator() + "15"
+					+ System.lineSeparator() + "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"
+					+ System.lineSeparator() + "15"
+					;
+			
+			String packages = Packer.pack(INPUT_CUSTOM_PATH);
 			Assertions.assertEquals(expected, packages);
 		} catch(APIException e) {
 			Assertions.fail("Unexpected exception: " + e.getLocalizedMessage());
