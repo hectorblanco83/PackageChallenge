@@ -64,12 +64,12 @@ public class Packer {
 	
 	
 	/**
-	 * Default constructor, package visibility to disable directly
+	 * Default constructor, protected visibility to disable directly
 	 * usage but let it remain visible fot tests
 	 *
 	 * @param opts The options that this Packer should use
 	 */
-	Packer(PackerOpts opts) {
+	protected Packer(PackerOpts opts) {
 		this.opts = opts;
 	}
 	
